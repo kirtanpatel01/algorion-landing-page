@@ -100,13 +100,7 @@ const stats = [
   { value: "6", label: "Institutional Data Streams" },
 ];
 
-type Test = {
-  name: string;
-  role: string;
-  quote: string;
-}
-
-const testimonials: Test[] = [
+const testimonials = [
   {
     name: "Kiran T.",
     role: "Retail Investor",
