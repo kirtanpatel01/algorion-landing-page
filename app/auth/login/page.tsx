@@ -1,8 +1,12 @@
-import React from 'react'
+import Button from '@/components/button'
+import Input from '@/components/input'
 
 function LoginPage() {
   return (
-    <div>LoginPage</div>
+    <div>LoginPage
+      <Button variant="primary">Login</Button>
+      <Input placeholder kirtan />
+    </div>
   )
 }
 

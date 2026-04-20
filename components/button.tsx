@@ -29,7 +29,11 @@ export default function Button({
   ...props
 }: ButtonProps) {
   return (
-    <button type={type} className={twMerge(buttonClasses(variant), className)} {...props}>
+    <button 
+      type={type} 
+      className={twMerge(buttonClasses(variant), className)} 
+      {...props}
+    >
       {children}
     </button>
   );

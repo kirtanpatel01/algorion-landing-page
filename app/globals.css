@@ -5,6 +5,7 @@
   --foreground: #141414;
   --foreground-muted: #8C8C8C;
   --border: #D1D1D1;
+  --primary: #163257;
 }
 
 @theme inline {
@@ -12,6 +13,7 @@
   --color-foreground: var(--foreground);
   --color-foreground-muted: var(--foreground-muted);
   --color-border: var(--border);
+  --color-primary: var(--primary);
 }
 
 body {
@@ -21,6 +23,10 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+.bg-gradient {
+  @apply bg-linear-to-br from-[#E5F0FF] via-white to-[#BAD7FEF0];
 }
 
 .brand-gradient {

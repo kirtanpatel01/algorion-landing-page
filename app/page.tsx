@@ -18,6 +18,8 @@ import {
   IconSparkles,
   IconUsers,
 } from "@tabler/icons-react";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const marketStrip = [
   "RELIANCE 2824.25 +1.32%",
@@ -98,7 +100,13 @@ const stats = [
   { value: "6", label: "Institutional Data Streams" },
 ];
 
-const testimonials = [
+type Test = {
+  name: string;
+  role: string;
+  quote: string;
+}
+
+const testimonials: Test[] = [
   {
     name: "Kiran T.",
     role: "Retail Investor",
@@ -152,6 +160,7 @@ const steps = [
 export default function Home() {
   return (
     <div className="">
+      <Header />
       <Container className="relative overflow-hidden px-4 pb-16 pt-14 md:px-6 md:pb-20">
         <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center text-center">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-sky-100 bg-white px-4 py-1 text-xs font-semibold text-slate-600 shadow-sm">
@@ -405,6 +414,7 @@ export default function Home() {
           </Button>
         </div>
       </Container>
+      <Footer />
     </div>
   );
 }
