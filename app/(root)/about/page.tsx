@@ -11,6 +11,7 @@ import {
 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
+import CTA from "@/components/cta";
 
 const storySteps = [
   {
@@ -231,6 +232,8 @@ export default function AboutPage() {
       </Container>
 
       <AnimatedFaqSection faqs={faqs} />
+
+      <CTA />
     </div>
   );
 }
