@@ -26,7 +26,11 @@ html {
 }
 
 .bg-gradient {
-  @apply bg-linear-to-br from-[#E5F0FF] via-white to-[#BAD7FEF0];
+  @apply bg-linear-to-br from-[#E5F0FF] via-white to-[#bad7fed0] ;
+}
+
+.blue-gradient {
+  @apply bg-gradient-to-r from-[#163257] to-[#306dbd];
 }
 
 .brand-gradient {
