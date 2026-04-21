@@ -1,13 +1,17 @@
 import Button from "@/components/button";
+import AnimatedFaqSection from "@/components/animated-faq-section";
 import Container from "@/components/container";
 import {
   IconArrowRight,
+  IconBrandLinkedinFilled,
   IconBulb,
   IconCheck,
   IconCircleCheck,
-  IconDeviceAnalytics,
   IconTargetArrow,
 } from "@tabler/icons-react";
+import Image from "next/image";
+import Link from "next/link";
+import CTA from "@/components/cta";
 
 const storySteps = [
   {
@@ -40,17 +44,20 @@ const team = [
   {
     name: "Kabir Khatri",
     role: "Director, Algorion",
-    accent: "from-[#2f7a66] to-[#133d35]",
+    img: "/kabir.png",
+    linkedin: "https://www.linkedin.com/in/kabirkhatri",
   },
   {
     name: "Parth Vaghela",
     role: "Director, Algorion",
-    accent: "from-[#5c88c9] to-[#305d9f]",
+    img: "/parth.jpg",
+    linkedin: "https://www.linkedin.com/in/parth-vaghela-390190254"
   },
   {
     name: "Ali Patel",
     role: "Software Developer",
-    accent: "from-[#4e79aa] to-[#274f81]",
+    img: "/ali.png",
+    linkedin: "https://www.linkedin.com/in/alipatel786"
   },
 ];
 
@@ -76,32 +83,32 @@ const faqs = [
 export default function AboutPage() {
   return (
     <div>
-      <Container className="px-4 pb-12 pt-12 md:px-6 md:pb-16 md:pt-16">
+      <Container className="py-10 md:py-16">
         <div className="text-center">
-          <span className="inline-flex items-center rounded-full border border-sky-100 bg-sky-50 px-4 py-1 text-xs font-semibold text-[#173a76]">
+          <span className="inline-flex items-center rounded-full border border-sky-100 px-4 py-1 text-xs font-semibold text-primary">
             About Us
           </span>
-          <h1 className="mt-5 text-4xl font-semibold tracking-tight text-[#173a76] md:text-5xl">
+          <h1 className="mt-4 text-3xl font-medium tracking-tight text-primary md:mt-5 md:text-5xl">
             Welcome to Algorion
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-600 md:text-base">
+          <p className="mx-auto mt-3 max-w-md text-sm text-foreground-muted md:mt-4 md:text-base">
             Redefining trading with your AI-powered companion for intelligent algorithmic strategies.
           </p>
         </div>
       </Container>
 
-      <Container className="px-4 py-4 md:px-6 md:py-8">
-        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+      <Container className="py-4 md:py-8">
+        <div className="grid grid-cols-1 items-start gap-6 md:gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
           <div>
-            <span className="inline-flex rounded-full bg-sky-50 px-3 py-1 text-[11px] font-semibold text-primary">
+            <span className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-primary">
               Our Story
             </span>
 
-            <h2 className="mt-4 text-3xl font-semibold leading-tight text-primary md:text-[2.05rem]">
+            <h2 className="mt-3 text-2xl font-medium leading-tight text-primary md:mt-4 md:text-3xl">
               Transforming Trading Through AI Innovation
             </h2>
 
-            <p className="mt-4 text-sm leading-relaxed text-slate-600">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 md:mt-4">
               At Algorion, we are passionate about helping investors make better decisions through
               AI and market intelligence. Founded by a team focused on practical outcomes, our
               platform turns noisy market data into clear and actionable insights.
@@ -112,124 +119,85 @@ export default function AboutPage() {
               create tools that support disciplined and confident trading.
             </p>
 
-            <div className="mt-7 space-y-4">
+            <div className="mt-6 space-y-4 md:mt-7">
               {storySteps.map((step) => (
-                <article key={step.number} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                  <span className="inline-flex rounded-md bg-[#edf4ff] px-2.5 py-1 text-xs font-semibold text-[#174b97]">
+                <article key={step.number} className="">
+                  <span className="inline-flex rounded-lg bg-[#edf4ff] px-4 py-3 font-semibold text-primary">
                     {step.number}
                   </span>
-                  <h3 className="mt-3 text-lg font-semibold text-slate-800">{step.title}</h3>
+                  <h3 className="mt-3 text-xl font-medium text-primary md:text-2xl">{step.title}</h3>
                   <p className="mt-2 text-sm text-slate-600">{step.text}</p>
                 </article>
               ))}
             </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-white p-3 shadow-[0_12px_30px_rgba(16,49,102,0.1)]">
-            <div className="h-full min-h-[420px] rounded-2xl bg-gradient-to-b from-slate-100 via-slate-200 to-slate-300 p-6">
-              <div className="h-full rounded-xl border border-white/50 bg-[linear-gradient(140deg,#d7e8ff_0%,#adc9ef_40%,#829ec4_100%)] p-4">
-                <div className="h-full rounded-lg bg-[linear-gradient(160deg,#5d7ea8_0%,#44658d_45%,#2f4d73_100%)] p-5">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-white/80">Leadership Team</p>
-                  <h3 className="mt-2 text-2xl font-semibold text-white">Human Insight. AI Precision.</h3>
-                  <p className="mt-3 max-w-xs text-sm text-white/85">
-                    Built by professionals who understand markets and technology equally.
-                  </p>
-
-                  <div className="mt-6 grid grid-cols-2 gap-3">
-                    <div className="rounded-lg bg-white/15 p-3 text-white backdrop-blur-sm">
-                      <p className="text-xl font-semibold">7+</p>
-                      <p className="text-xs text-white/85">Years Building AI Systems</p>
-                    </div>
-                    <div className="rounded-lg bg-white/15 p-3 text-white backdrop-blur-sm">
-                      <p className="text-xl font-semibold">24/7</p>
-                      <p className="text-xs text-white/85">Market Monitoring</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Image src="/parth-kabir.png" alt="Our Story" width={600} height={400} className="w-full rounded-2xl object-cover" />
         </div>
       </Container>
 
-      <section className="mt-14 bg-[#f4f7fb] py-12 md:py-14">
-        <Container className="px-4 md:px-6">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
-            <article className="rounded-2xl bg-white p-6 shadow-sm">
-              <span className="inline-flex rounded-lg bg-[#edf4ff] p-2 text-[#174b97]">
-                <IconTargetArrow size={20} />
-              </span>
-              <h3 className="mt-4 text-2xl font-semibold text-slate-800">Our Mission</h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                To empower traders by removing emotional bias and complexity in decision making,
-                providing consistent, market-backed intelligence through smart automation.
-              </p>
-            </article>
+      <Container className="mt-10 bg-[#f4f7fb] py-10 md:mt-14 md:py-14">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+          <article className="rounded-2xl bg-white p-5 shadow-sm md:p-6">
+            <span className="inline-flex rounded-lg bg-[#edf4ff] p-2 text-[#174b97]">
+              <IconTargetArrow size={20} />
+            </span>
+            <h3 className="mt-3 text-xl font-medium text-primary md:mt-4 md:text-2xl">Our Mission</h3>
+            <p className="mt-2 text-sm leading-relaxed text-foreground-muted md:mt-3 md:text-base">
+              To empower traders by removing emotional bias and complexity in decision making,
+              providing consistent, market-backed intelligence through smart automation.
+            </p>
+          </article>
 
-            <article className="rounded-2xl bg-white p-6 shadow-sm">
-              <span className="inline-flex rounded-lg bg-[#edf4ff] p-2 text-[#174b97]">
-                <IconBulb size={20} />
-              </span>
-              <h3 className="mt-4 text-2xl font-semibold text-slate-800">Our Vision</h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                To become the industry leader in AI-driven algorithmic trading, offering intuitive,
-                accurate, and intelligent trading tools to investors across the globe.
-              </p>
-            </article>
-          </div>
-        </Container>
-      </section>
+          <article className="rounded-2xl bg-white p-5 shadow-sm md:p-6">
+            <span className="inline-flex rounded-lg bg-[#edf4ff] p-2 text-[#174b97]">
+              <IconBulb size={20} />
+            </span>
+            <h3 className="mt-3 text-xl font-medium text-primary md:mt-4 md:text-2xl">Our Vision</h3>
+            <p className="mt-3 text-sm leading-relaxed text-foreground-muted">
+              To become the industry leader in AI-driven algorithmic trading, offering intuitive,
+              accurate, and intelligent trading tools to investors across the globe.
+            </p>
+          </article>
+        </div>
+      </Container>
 
-      <Container className="px-4 py-16 md:px-6">
-        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+      <Container className="py-10 md:py-16">
+        <div className="flex flex-col gap-6 md:gap-8 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <h2 className="text-3xl font-semibold text-[#173a76]">What We Offer:</h2>
-            <ul className="mt-5 space-y-3">
+            <h2 className="text-2xl font-semibold text-[#173a76] md:text-3xl">What We Offer:</h2>
+            <ul className="mt-5 flex flex-col gap-3">
               {offerings.map((item) => (
                 <li key={item} className="inline-flex items-start gap-2.5 text-sm text-slate-600">
-                  <IconCircleCheck size={18} className="mt-0.5 shrink-0 text-sky-500" />
+                  <IconCircleCheck size={18} className="mt-0.5 shrink-0 text-blue-700 fill-blue-200" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
 
-            <Button variant="outline" className="mt-7 px-3 py-1.5 text-xs">
-              AI In Talk
+            <Button variant="outline" className="mt-6 text-sm md:mt-7">
+              Let&apos;s Talk
             </Button>
           </div>
 
-          <div className="mx-auto w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-3 shadow-[0_12px_28px_rgba(15,43,90,0.12)]">
-            <div className="h-72 rounded-xl bg-[radial-gradient(circle_at_30%_20%,#35de86_0%,#0f6f6b_35%,#0e2d52_75%,#081832_100%)] p-4">
-              <div className="flex h-full items-end rounded-lg border border-emerald-200/20 bg-white/5 p-4">
-                <div className="w-full">
-                  <div className="mb-4 inline-flex rounded-lg bg-white/15 p-2 text-white">
-                    <IconDeviceAnalytics size={20} />
-                  </div>
-                  <p className="text-sm font-semibold text-white">Predictive Insight Engine</p>
-                  <p className="mt-1 text-xs text-white/80">
-                    Real-time trend mapping with signal confidence and momentum tracking.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Image src="/what-we-can-offer.png" alt="what-we-can-offer" width={300} height={400} className="mx-auto w-full max-w-sm rounded-2xl aspect-square object-cover lg:mx-0" />
         </div>
       </Container>
 
-      <section className="brand-gradient py-16 text-white md:py-18">
-        <Container className="px-4 text-center md:px-6">
-          <span className="inline-flex rounded-full bg-white/15 px-4 py-1 text-xs font-semibold text-white">
+      <section className="brand-gradient py-12 text-white md:py-18">
+        <Container className="text-center">
+          <span className="inline-flex rounded-full bg-white/15 px-4 py-1 text-xs font-light tracking-wider text-white">
             Why Algorion
           </span>
-          <h2 className="mt-5 text-3xl font-semibold md:text-4xl">Numbers That Speak for Themselves</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-white/85">
+          <h2 className="mt-4 text-2xl md:mt-5 md:text-4xl">Numbers That Speak for Themselves</h2>
+          <p className="mx-auto mt-2 max-w-2xl text-sm text-white/80 md:mt-3 md:text-base">
             Trusted by traders worldwide with a strong track record that defines our credibility.
           </p>
 
-          <div className="mt-10 grid grid-cols-2 gap-4 rounded-2xl bg-white/10 p-5 backdrop-blur-sm md:grid-cols-4">
+          <div className="mt-7 grid grid-cols-2 divide-x divide-y divide-primary/40 rounded-2xl bg-white/10 backdrop-blur-sm md:mt-10 md:grid-cols-4">
             {stats.map((item) => (
-              <div key={item.label} className="rounded-xl bg-white/10 px-3 py-4">
-                <p className="text-2xl font-semibold">{item.value}</p>
+              <div key={item.label} className="px-3 py-6 md:py-8">
+                <p className="text-xl md:text-2xl">{item.value}</p>
                 <p className="mt-1 text-xs text-white/80">{item.label}</p>
               </div>
             ))}
@@ -237,99 +205,35 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <Container className="px-4 py-16 md:px-6">
+      <Container className="py-10 md:py-16">
         <span className="inline-flex rounded-full bg-sky-50 px-3 py-1 text-[11px] font-semibold text-[#173a76]">
           Our Team
         </span>
-        <h2 className="mt-4 max-w-xl text-4xl font-semibold leading-tight text-[#173a76]">
+        <h2 className="mt-4 max-w-xl text-3xl font-medium leading-tight text-[#173a76] md:text-4xl">
           Dedicated Team Members for <span className="text-[#2c8f4f]">Algorion</span>
         </h2>
 
-        <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:mt-8 md:gap-5">
           {team.map((member) => (
-            <article key={member.name} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <div className={`h-52 bg-gradient-to-br ${member.accent}`} />
-              <div className="flex items-center justify-between border-t border-slate-100 px-4 py-3">
+            <article key={member.name} className="relative overflow-hidden rounded-2xl bg-white shadow-sm">
+              <Image src={member.img} alt={member.name} width={300} height={400} className="aspect-3/4 w-full object-cover" />
+              <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between bg-white px-4 py-3">
                 <div>
                   <h3 className="text-sm font-semibold text-slate-800">{member.name}</h3>
                   <p className="text-xs text-slate-500">{member.role}</p>
                 </div>
-                <span className="rounded-md border border-slate-300 px-2 py-1 text-[10px] font-semibold text-slate-600">
-                  in
-                </span>
+                <Link href={member.linkedin} target="_blank">
+                  <IconBrandLinkedinFilled size={32} className="text-blue-800 hover:text-blue-700 cursor-pointer" />
+                </Link>
               </div>
             </article>
           ))}
         </div>
       </Container>
 
-      <Container className="px-4 py-14 md:px-6">
-        <span className="inline-flex rounded-full bg-sky-50 px-3 py-1 text-[11px] font-semibold text-[#173a76]">
-          FAQ
-        </span>
-        <h2 className="mt-4 text-4xl font-semibold tracking-tight text-[#173a76]">
-          Frequently Asked Questions (FAQs)
-        </h2>
+      <AnimatedFaqSection faqs={faqs} />
 
-        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
-          {faqs.map((item, index) => (
-            <details
-              key={item.q}
-              className="group rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
-              open={index === 0}
-            >
-              <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-medium text-slate-700">
-                <span>{item.q}</span>
-                <span className="text-slate-400 transition group-open:rotate-45">+</span>
-              </summary>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.a}</p>
-            </details>
-          ))}
-        </div>
-      </Container>
-
-      <Container className="px-4 pb-16 pt-4 md:px-6 md:pb-20">
-        <div className="brand-gradient relative overflow-hidden rounded-2xl p-8 text-white md:p-10">
-          <div className="pointer-events-none absolute -right-10 -top-10 h-52 w-52 rounded-full bg-white/15 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-14 -left-10 h-52 w-52 rounded-full bg-white/10 blur-3xl" />
-
-          <div className="relative grid grid-cols-1 items-center gap-8 md:grid-cols-[1.1fr_0.9fr]">
-            <div>
-              <span className="inline-flex rounded-full bg-white/20 px-3 py-1 text-xs font-semibold">
-                Trusted by Traders
-              </span>
-              <h2 className="mt-4 max-w-md text-4xl font-semibold leading-tight">
-                Ready to Make Smarter Investments?
-              </h2>
-              <p className="mt-4 max-w-md text-sm text-white/85">
-                Join thousands of traders making data-driven decisions with AI-powered insights.
-              </p>
-
-              <Button
-                variant="primary"
-                className="mt-6 bg-white px-4 py-2.5 text-sm font-semibold text-[#173a76] hover:bg-white/90"
-              >
-                Start Your Free Trial
-                <IconArrowRight size={16} className="ml-1" />
-              </Button>
-            </div>
-
-            <div className="h-56 rounded-xl border border-white/20 bg-[radial-gradient(circle_at_75%_20%,#63c6ff_0%,#295da8_35%,#16396f_70%,#10284b_100%)] p-4">
-              <div className="flex h-full items-end rounded-lg border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
-                <div>
-                  <div className="mb-2 inline-flex rounded-lg bg-white/20 p-2">
-                    <IconCheck size={18} />
-                  </div>
-                  <p className="text-sm font-semibold">Live Momentum Dashboard</p>
-                  <p className="mt-1 text-xs text-white/80">
-                    Monitor trend strength, signal reliability, and market direction instantly.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Container>
+      <CTA />
     </div>
   );
 }
