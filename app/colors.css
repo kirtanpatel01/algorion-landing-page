@@ -1,0 +1,88 @@
+@theme inline {
+  /* ========================================= */
+  /* Surfaces & Backgrounds                    */
+  /* ========================================= */
+  
+  /* The overarching app surface representing #fff and bg-white */
+  --color-surface: var(--color-white);
+  
+  /* Very subtle backgrounds for soft contrast (#F8FAFC, #f8f8f8, bg-slate-50) */
+  --color-surface-subtle: var(--color-slate-50);
+  
+  /* Muted backgrounds for cards and sections (#e2e2e2, bg-slate-100) */
+  --color-surface-muted: var(--color-slate-100);
+  
+  /* Dark contrasting surfaces (#303030, bg-slate-800) */
+  --color-surface-dark: var(--color-slate-800);
+  
+  /* Pitch dark backgrounds (#141414, #111, #2b2b2b, bg-slate-900) */
+  --color-surface-darker: var(--color-slate-900);
+
+
+  /* ========================================= */
+  /* Typography / Text (Grays -> Slate)        */
+  /* ========================================= */
+  
+  /* Standard prominent text (#111, #303030, text-slate-900) */
+  --color-text-primary: var(--color-slate-900);
+  
+  /* Secondary readable text (#575757, text-slate-700) */
+  --color-text-secondary: var(--color-slate-700);
+  
+  /* Muted, Placeholder or Helper text (#8C8C8C, #a7a7a7, #8b8b8b, text-slate-500) */
+  --color-text-muted: var(--color-slate-500);
+
+
+  /* ========================================= */
+  /* Borders & Dividers (Grays -> Slate)       */
+  /* ========================================= */
+  
+  /* Extra subtle borders */
+  --color-border-subtle: var(--color-slate-100);
+  
+  /* Default component borders (#D1D1D1, #e2e2e2, border-slate-200) */
+  --color-border-default: var(--color-slate-200);
+  
+  /* Stronger borders or outlines (#bcbcbc, border-slate-300) */
+  --color-border-strong: var(--color-slate-300);
+
+
+  /* ========================================= */
+  /* Brand Theme (Blues)                       */
+  /* ========================================= */
+  
+  /* Extremely light blue surface (#edf4ff, #E5F0FF, #F8FCFF, #f4f7fb) */
+  --color-brand-surface: var(--color-blue-50);
+  
+  /* Highlight borders or very subtle highlights */
+  --color-brand-light: var(--color-blue-100);
+  
+  /* Faded brand accents, shadows, or pills (bg-blue-200, fill-blue-200) */
+  --color-brand-muted: var(--color-blue-200);
+  
+  /* The core brand color (#306dbd, #2f67b5) */
+  --color-brand-base: var(--color-blue-600);
+  
+  /* Active states or deeper primary elements */
+  --color-brand-hover: var(--color-blue-700);
+  
+  /* Dark brand variants (#174b97) */
+  --color-brand-dark: var(--color-blue-800);
+  
+  /* Deepest brand color for headings or rich contrast (#163257, #173a76, #1F3557, #1f4f8f) */
+  --color-brand-darker: var(--color-blue-900);
+
+
+  /* ========================================= */
+  /* Status & Accents                          */
+  /* ========================================= */
+  
+  /* Success states (text-green-500, text-emerald-500) */
+  --color-success: var(--color-emerald-500);
+  
+  /* Warning states (text-amber-400) */
+  --color-warning: var(--color-amber-400);
+  
+  /* Danger/Error states (text-rose-500, #ea4335) */
+  --color-danger: var(--color-rose-500);
+}
