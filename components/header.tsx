@@ -6,9 +6,11 @@ import { useState } from "react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import Container from "./container";
 import Button from "./button";
+import { useRouter } from "next/navigation";
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const router = useRouter();
 
   const links = [
     { title: "Features", href: "/features" },
@@ -46,7 +48,7 @@ function Header() {
             
         {/* Desktop Buttons */}
         <div className="hidden sm:flex items-center gap-2 px-2 sm:px-4 py-3 sm:py-4">
-          <Button variant="outline" className="px-2 sm:px-3 py-1.5 text-xs sm:text-sm">
+          <Button variant="outline" onClick={() => router.push("/auth/login")} className="px-2 sm:px-3 py-1.5 text-xs sm:text-sm cursor-pointer">
             Login
           </Button>
           <Button variant="primary" className="px-2 sm:px-3 py-1.5 text-xs sm:text-sm whitespace-nowrap">
