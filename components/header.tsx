@@ -18,11 +18,11 @@ function Header() {
   ];
 
   return (
-    <div className="sticky z-40 md:top-4 xl:top-8 md:px-4">
+    <div className="sticky z-40 top-0 md:top-4 xl:top-8 md:px-4">
       <Container className="md:rounded-xl bg-white shadow-md">
         <div className="flex items-center justify-between">
           {/* Logo and Desktop Navigation */}
-          <div className="flex items-center gap-2 md:gap-4 px-3 sm:px-4 py-3 sm:py-4 flex-1">
+          <div className="flex items-center gap-2 md:gap-4 px-0 sm:px-4 py-3 sm:py-4 flex-1">
             <Link href="/" className="flex items-center gap-2 shrink-0">
               <Image
                 src="/algorion-logo.png"
@@ -61,7 +61,7 @@ function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="sm:hidden flex items-center justify-center p-2 text-slate-600 hover:bg-slate-100 rounded-md mr-2"
+            className="sm:hidden flex items-center justify-center p-2 text-slate-600 hover:bg-slate-100 rounded-md"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <IconX size={24} /> : <IconMenu2 size={24} />}
