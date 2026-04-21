@@ -12,82 +12,15 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import CTA from "@/components/cta";
-
-const storySteps = [
-  {
-    number: "01",
-    title: "The Beginning - Vision & Innovation",
-    text: "Algorion was founded to make data-driven investing simpler, faster, and more reliable for every trader.",
-  },
-  {
-    number: "02",
-    title: "Building the Foundation",
-    text: "We combined market intelligence with practical AI workflows to help investors take confident action.",
-  },
-];
-
-const offerings = [
-  "AI-powered stock price prediction using advanced ML models",
-  "Real-time market data analysis and risk management",
-  "Personalized alerts and recommendation engine",
-  "Unified dashboard with technical and fundamental insights",
-];
-
-const stats = [
-  { value: "50K+", label: "Active Traders" },
-  { value: "92%", label: "Signal Accuracy Rate" },
-  { value: "2M+", label: "Daily AI Predictions" },
-  { value: "135+", label: "Markets Covered" },
-];
-
-const team = [
-  {
-    name: "Kabir Khatri",
-    role: "Director, Algorion",
-    img: "/kabir.png",
-    linkedin: "https://www.linkedin.com/in/kabirkhatri",
-  },
-  {
-    name: "Parth Vaghela",
-    role: "Director, Algorion",
-    img: "/parth.jpg",
-    linkedin: "https://www.linkedin.com/in/parth-vaghela-390190254"
-  },
-  {
-    name: "Ali Patel",
-    role: "Software Developer",
-    img: "/ali.png",
-    linkedin: "https://www.linkedin.com/in/alipatel786"
-  },
-];
-
-const faqs = [
-  {
-    q: "What is Algorion?",
-    a: "Algorion is an AI-powered stock intelligence platform that helps users make informed trading decisions using market data and predictive analytics.",
-  },
-  {
-    q: "Who can use Algorion?",
-    a: "Algorion is built for beginner and experienced investors, active traders, and market researchers who want data-backed insights.",
-  },
-  {
-    q: "How does Algorion help in trading?",
-    a: "The platform combines real-time market analysis, alerts, and smart dashboards to reduce noise and improve timing.",
-  },
-  {
-    q: "Is Algorion suitable for long-term investors?",
-    a: "Yes. Algorion provides both short-term signal tracking and long-term market context for strategic decisions.",
-  },
-];
+import { faqs, offerings, stats, storySteps, team } from "@/constants/pages/about";
+import SectionBadge from "@/components/section-badge";
 
 export default function AboutPage() {
   return (
     <div>
       <Container className="py-10 md:py-16">
         <div className="text-center">
-          <span className="inline-flex items-center rounded-full border border-sky-100 px-4 py-1 text-xs font-semibold text-primary">
-            About Us
-          </span>
+          <SectionBadge label="About Us" />
           <h1 className="mt-4 text-3xl font-medium tracking-tight text-primary md:mt-5 md:text-5xl">
             Welcome to Algorion
           </h1>
@@ -98,7 +31,7 @@ export default function AboutPage() {
       </Container>
 
       <Container className="py-4 md:py-8">
-        <div className="grid grid-cols-1 items-start gap-6 md:gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+        <div className="grid grid-cols-1 items-start gap-6 md:gap-8 md:grid-cols-[1.1fr_0.9fr] lg:gap-12">
           <div>
             <span className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-primary">
               Our Story
@@ -136,8 +69,8 @@ export default function AboutPage() {
         </div>
       </Container>
 
-      <Container className="mt-10 bg-[#f4f7fb] py-10 md:mt-14 md:py-14">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+      <section className="mt-10 bg-[#f4f7fb] py-10 md:mt-14 md:py-14">
+        <Container className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
           <article className="rounded-2xl bg-white p-5 shadow-sm md:p-6">
             <span className="inline-flex rounded-lg bg-[#edf4ff] p-2 text-[#174b97]">
               <IconTargetArrow size={20} />
@@ -159,8 +92,8 @@ export default function AboutPage() {
               accurate, and intelligent trading tools to investors across the globe.
             </p>
           </article>
-        </div>
-      </Container>
+        </Container>
+      </section>
 
       <Container className="py-10 md:py-16">
         <div className="flex flex-col gap-6 md:gap-8 lg:flex-row lg:items-center lg:justify-between">

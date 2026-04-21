@@ -1,74 +1,9 @@
-import React from "react";
 import Container from "@/components/container";
-import Button from "@/components/button";
 import { IconCheck } from "@tabler/icons-react";
-import Image from "next/image";
-import { IconArrowRight } from "@tabler/icons-react";
 import { IconShieldCheck } from "@tabler/icons-react";
 import CTA from "@/components/cta";
-
-const pricingPlans = [
-  {
-    name: "Monthly",
-    period: "Month",
-    price: "₹299",
-    buttonText: "Start Annual Plan",
-    features: [
-      "Advanced Stock Scanner",
-      "Real-Time Market Data",
-      "AI-Powered Insights",
-      "Advanced Market Analysis",
-      "AI-50 NFT events",
-      "AI Predictions",
-    ],
-    popular: false,
-  },
-  {
-    name: "Quarterly",
-    period: "Quarter",
-    price: "₹855",
-    buttonText: "Start Quarterly Plan",
-    features: [
-      "Advanced Stock Scanner",
-      "Real-Time Market Data",
-      "AI-Powered Insights",
-      "Advanced Market Analysis",
-      "AI-50 NFT events",
-      "AI Predictions",
-    ],
-    popular: false,
-  },
-  {
-    name: "Bi-Annual",
-    period: "Half Year",
-    price: "₹1,710",
-    buttonText: "Start Bi-Annual Plan",
-    features: [
-      "Advanced Stock Scanner",
-      "Real-Time Market Data",
-      "AI-Powered Insights",
-      "Advanced Market Analysis",
-      "AI-50 NFT events",
-      "AI Predictions",
-    ],
-    popular: true,
-  },
-  {
-    name: "Annual",
-    period: "Year",
-    price: "₹3,350",
-    buttonText: "Start Annual Plan",
-    features: [
-      "Advanced Stock Scanner",
-      "Real-Time Market Data",
-      "AI-Powered Insights",
-      "Advanced Market Analysis",
-      "AI-50 NFT events",
-      "AI Predictions",
-    ],
-    popular: false,
-  },
-];
+import { pricingPlans } from "@/constants/pages/pricing";
+import SectionBadge from "@/components/section-badge";
 
 function PricingPage() {
   return (
@@ -77,14 +12,7 @@ function PricingPage() {
       <section className="py-16 md:py-24">
         <Container>
           <div className="text-center mb-16">
-            <div className="flex items-center justify-center gap-6 mb-6 ">
-              <div className="h-px w-24 bg-border" />
-              <div className="inline-flex items-center gap-2 bg-gradient text-primary px-4 py-2 rounded-full text-xs border border-primary ">
-                <IconShieldCheck size={16} />
-                <span>CHOOSE YOUR PLAN</span>
-              </div>
-              <div className="h-px w-24 bg-border " />
-            </div>
+            <SectionBadge label="CHOOSE YOUR PLAN" icon={IconShieldCheck} />
             <h1 className="text-4xl md:text-5xl font-normal text-primary mb-4">
               Flexible Pricing for Every Trader
             </h1>

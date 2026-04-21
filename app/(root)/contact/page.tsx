@@ -7,6 +7,8 @@ import { IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
 import { IconShieldCheck } from "@tabler/icons-react";
 import CTA from "@/components/cta";
+import { infoCards } from "@/constants/pages/contact";
+import SectionBadge from "@/components/section-badge";
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -35,39 +37,12 @@ function ContactPage() {
     setFormData({ fullName: "", email: "", subject: "", message: "" });
   };
 
-  const infoCards = [
-    {
-      title: "General Enquiries",
-      description:
-        "For general questions, partnerships or anything else. Our team responds within 24 hours.",
-      email: "hello@algorion.tech",
-    },
-    {
-      title: "Support Hours",
-      description: "Monday - Saturday, 9:00 AM - 6:00 PM, Sunday Closed",
-      note: "We typically respond within 24 hours",
-    },
-    {
-      title: "Technical Support",
-      description:
-        "Platform issues, API support or billing inquiries. Check status page for live updates.",
-      email: "support@algorion.tech",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <Container className="px-3 sm:px-4 xl:px-0 py-12 sm:py-16 md:py-20">
         <div className="text-center mb-8 sm:mb-12">
-          <div className="flex items-center justify-center gap-6 mb-6 ">
-            <div className="h-px w-24 bg-border" />
-            <div className="inline-flex items-center gap-2 bg-gradient text-primary px-4 py-2 rounded-full text-xs border border-primary ">
-              <IconShieldCheck size={16} />
-              <span>We're Here To Help</span>
-            </div>
-            <div className="h-px w-24 bg-border " />
-          </div>
+          <SectionBadge label="We're Here To Help" icon={IconShieldCheck} />
           <h1 className="text-3xl sm:text-4xl md:text-5xl  text-primary mb-3 sm:mb-4">
             Get in Touch with Our Team
           </h1>

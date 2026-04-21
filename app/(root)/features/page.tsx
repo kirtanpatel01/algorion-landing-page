@@ -1,7 +1,10 @@
 import Container from "@/components/container";
-import { IconCheck, IconCircleCheck, IconShieldCheck } from "@tabler/icons-react";
+import { IconCircleCheck, IconShieldCheck } from "@tabler/icons-react";
 import Image from "next/image";
 import CTA from "@/components/cta";
+import SectionBadge from "@/components/section-badge";
+import FeatureCardsSection from "@/components/feature-cards-section";
+import { howItWorksSteps } from "@/constants/pages/features";
 
 function FeaturesPage() {
   return (
@@ -9,14 +12,7 @@ function FeaturesPage() {
       {/* HEADER SECTION */}
       <Container className="pt-20 md:pt-32 text-center">
         {/* Top Badge */}
-        <div className="flex items-center justify-center gap-6 mb-6">
-          <div className="h-px w-24 bg-border" />      
-          <div className="flex items-center gap-2 border border-border text-primary px-4 py-1.5 rounded-full text-xs bg-gradient">
-            <IconShieldCheck size={14} />
-            Platform Features
-          </div>
-          <div className="h-px w-24 bg-border "/>
-        </div>
+        <SectionBadge label="Platform Features" icon={IconShieldCheck} />
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl text-primary font-normal mb-4">
           Powerful AI Features for Smart Trading
@@ -36,78 +32,9 @@ function FeaturesPage() {
         <p className="text-foreground-muted mb-10">
           Everything you need to make informed investment decisions
         </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* CARD 1 */}
-          <div className="bg-gradient border border-border p-5 sm:p-8 rounded-xl">
-            <div className="flex justify-center items-center">
-              <Image
-                src="/Group 38.png"
-                alt="google"
-                width={200}
-                height={18}
-                className="mb-5"
-              />
-            </div>
-            <h3 className="text-lg text-primary mb-2">AI Predictions</h3>
-            <p className="text-foreground-muted text-sm">
-              AI-driven stock recommendations and performance insights
-            </p>
-          </div>
-
-          {/* CARD 2 */}
-          <div className="bg-gradient border border-border p-5 sm:p-8 rounded-xl">
-            <div className="flex justify-center items-center">
-              <Image
-                src="/cuate.png"
-                alt="google"
-                width={200}
-                height={18}
-                className="mb-10 mt-10"
-              />
-            </div>
-            <h3 className="text-lg text-primary mb-2">Technical Analysis</h3>
-            <p className="text-foreground-muted text-sm">
-              Advanced charting tools with 20+ indicators and pattern
-              recognition
-            </p>
-          </div>
-
-          {/* CARD 3 */}
-          <div className="bg-gradient border border-border p-5 sm:p-8 rounded-xl">
-            <div className="flex justify-center items-center">
-              <Image
-                src="/Group 59.png"
-                alt="google"
-                width={400}
-                height={18}
-                className="mb-5"
-              />
-            </div>
-            <h3 className="text-lg text-primary mb-2">IPO Tracking</h3>
-            <p className="text-foreground-muted text-sm">
-              Comprehensive tracking and analysis of upcoming IPOs
-            </p>
-          </div>
-
-          {/* CARD 4 */}
-          <div className="bg-gradient border border-border p-5 sm:p-8 rounded-xl">
-            <div className="flex justify-center items-center">
-              <Image
-                src="/Group 60.png"
-                alt="google"
-                width={400}
-                height={18}
-                className="m-5 mb-18"
-              />
-            </div>
-            <h3 className="text-lg text-primary mb-2">Market Intelligence</h3>
-            <p className="text-foreground-muted text-sm">
-              Real-time news, market announcements, and insights
-            </p>
-          </div>
-        </div>
+      <FeatureCardsSection />
       </Container>
+
 
       {/* HOW IT WORKS */}
       <section className="mt-14 md:mt-24 text-center max-w-7xl mx-auto px-4 xl:px-0">
@@ -116,89 +43,29 @@ function FeaturesPage() {
           Get started in three simple steps
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* STEP 1 */}
-          <div className="border border-border rounded-2xl p-6 flex flex-col sm:flex-row justify-between items-center bg-background  gap-4">
-            {/* LEFT */}
-            <div className="text-left w-full sm:max-w-[60%]">
-              <div className="w-10 h-10 rounded-full bg-blue-100 text-primary flex items-center justify-center font-medium mb-4">
-                1
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+          {howItWorksSteps.map((step) => (
+            <div key={step.number} className="max-w-lg mx-auto border border-border rounded-2xl p-6 flex flex-col sm:flex-row justify-between items-center bg-background gap-4">
+              <div className="text-left w-full sm:max-w-[60%]">
+                <div className="w-10 h-10 rounded-full bg-blue-100 text-primary flex items-center justify-center font-medium mb-4">
+                  {step.number}
+                </div>
+
+                <h3 className="text-lg text-primary mb-1">{step.title}</h3>
+                <p className="text-sm text-foreground-muted mb-2">{step.subtitle}</p>
+
+                <p className="text-xs text-gray-500">{step.description}</p>
               </div>
 
-              <h3 className="text-lg text-primary mb-1">Sign Up</h3>
-              <p className="text-sm text-foreground-muted mb-2">
-                Simple, quick, and secure onboarding
-              </p>
-
-              <p className="text-xs text-gray-500">
-                Set up your account effortlessly and start building better
-                strategies from day one.
-              </p>
+              <Image
+                src={step.imgSrc}
+                alt={step.imgAlt}
+                width={step.imgWidth}
+                height={step.imgHeight}
+                className="object-contain"
+              />
             </div>
-
-            {/* RIGHT IMAGE */}
-            <Image
-              src="/1.png"
-              alt="step1"
-              width={120}
-              height={120}
-              className="object-contain"
-            />
-          </div>
-
-          {/* STEP 2 */}
-          <div className="border border-border rounded-2xl p-6 flex flex-col sm:flex-row justify-between items-center bg-background  gap-4">
-            <div className="text-left w-full sm:max-w-[60%]">
-              <div className="w-10 h-10 rounded-full bg-blue-100 text-primary flex items-center justify-center font-medium mb-4">
-                2
-              </div>
-
-              <h3 className="text-lg text-primary mb-1">Search Stocks</h3>
-              <p className="text-sm text-foreground-muted mb-2">
-                Find the right stocks faster
-              </p>
-
-              <p className="text-xs text-gray-500">
-                Explore 48+ NSE/BSE stocks with real-time insights, performance
-                data, and powerful analytics tools.
-              </p>
-            </div>
-
-            <Image
-              src="/2.png"
-              alt="step2"
-              width={140}
-              height={120}
-              className="object-contain"
-            />
-          </div>
-
-          {/* STEP 3 */}
-          <div className="border border-border rounded-2xl p-6 flex flex-col sm:flex-row justify-between items-center bg-background  gap-4">
-            <div className="text-left w-full sm:max-w-[60%]">
-              <div className="w-10 h-10 rounded-full bg-blue-100 text-primary flex items-center justify-center font-medium mb-4">
-                3
-              </div>
-
-              <h3 className="text-lg text-primary mb-1">Get AI Insights</h3>
-              <p className="text-sm text-foreground-muted mb-2">
-                Make smarter decisions with AI
-              </p>
-
-              <p className="text-xs text-gray-500">
-                Access machine learning predictions, technical analysis, and
-                smart trading signals to guide your investments.
-              </p>
-            </div>
-
-            <Image
-              src="/3.png"
-              alt="step3"
-              width={140}
-              height={120}
-              className="object-contain"
-            />
-          </div>
+          ))}
         </div>
       </section>
 
