@@ -18,7 +18,7 @@ function FeaturesPage() {
             <IconShieldCheck size={14} />
             Platform Features
           </div>
-          <div className="h-px w-24 bg-border "></div>
+          <div className="h-px w-24 bg-border "/>
         </div>
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl text-primary font-normal mb-4">
@@ -66,7 +66,7 @@ function FeaturesPage() {
                 alt="google"
                 width={200}
                 height={18}
-                className="mb-21"
+                className="mb-10 mt-10"
               />
             </div>
             <h3 className="text-lg text-primary mb-2">Technical Analysis</h3>
@@ -113,7 +113,7 @@ function FeaturesPage() {
       </Container>
 
       {/* HOW IT WORKS */}
-      <Container className="mt-14 md:mt-24 text-center px-4 sm:px-6">
+      <section className="mt-14 md:mt-24 text-center max-w-7xl mx-auto">
         <h2 className="text-3xl text-primary mb-2">How It Works</h2>
         <p className="text-foreground-muted mb-12">
           Get started in three simple steps
@@ -203,11 +203,11 @@ function FeaturesPage() {
             />
           </div>
         </div>
-      </Container>
+      </section>
 
       {/* DASHBOARD SECTION */}
       <div className="bg-[#F8FAFC] p-2 mt-10">
-        <Container className="mt-8 mb-8 md:mt-15 md:mb-15 grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-4 sm:px-6">
+        <Container className="mt-8 mb-8 md:mt-15 md:mb-15 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-2xl text-primary mb-4">
               AI Signal Dashboard See the Market Clearly
@@ -229,9 +229,9 @@ function FeaturesPage() {
           <Image
             src="/background.png"
             alt="google"
-            width={400}
+            width={480}
             height={18}
-            className="ml-0 md:ml-30 w-full h-auto"
+            className="ml-0 md:ml-20 "
           />
         </Container>
       </div>
