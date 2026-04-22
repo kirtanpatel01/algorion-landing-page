@@ -64,8 +64,8 @@ export default function FeatureCardsSection() {
               />
             </div>
             <div>
-              <h3 className="text-base md:text-lg font-medium text-slate-800">{card.title}</h3>
-              <p className="mt-1 md:mt-2 text-xs md:text-sm text-slate-600">{card.text}</p>
+              <h3 className="text-base md:text-lg font-medium text-brand-darker">{card.title}</h3>
+              <p className="mt-1 md:mt-2 text-xs md:text-sm text-text-secondary">{card.text}</p>
             </div>
           </div>
         ))}

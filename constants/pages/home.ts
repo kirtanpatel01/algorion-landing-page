@@ -107,13 +107,13 @@ export const cuttingEdge = [
     title: "Machine Learning",
     desc: "Advanced ML algorithms for pattern recognition and prediction modeling",
     icon: IconSettingsAi,
-    color: "bg-blue-200 text-blue-600",
+    color: "bg-brand-muted text-brand-base",
   },
   {
     title: "Real-Time Data",
     desc: "Live market data processing with millisecond-level updates.",
     icon: IconClockHour4,
-    color: "bg-blue-200 text-blue-600",
+    color: "bg-brand-muted text-brand-base",
   },
   {
     title: "Technical Analysis",
@@ -131,7 +131,7 @@ export const cuttingEdge = [
     title: "Data Security",
     desc: "Enterprise -grade encryption and secure systems.",
     icon: IconLock,
-    color: "bg-sky-200 text-sky-600",
+    color: "bg-sky-200 text-brand-base",
   },
 ];
 
@@ -141,7 +141,7 @@ export const stats = [
     heading: "NSE/BSE Stocks",
     subHeading: "Major indian stocks covered",
     icon: IconChartLine,
-    color: "bg-sky-200 text-sky-600",
+    color: "bg-sky-200 text-brand-base",
   },
   {
     value: "30+",

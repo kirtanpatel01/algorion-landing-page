@@ -13,6 +13,7 @@ function Header() {
   const pathname = usePathname();
 
   const links = [
+    { title: "Home", href: "/" },
     { title: "Features", href: "/features" },
     { title: "Pricing", href: "/pricing" },
     { title: "About", href: "/about" },
@@ -23,7 +24,7 @@ function Header() {
 
   return (
     <div className="sticky z-40 top-0 md:top-4 xl:top-8 md:px-4 text-sm lg:text-base">
-      <Container className="md:rounded-xl bg-white shadow-md px-0">
+      <Container className="md:rounded-xl bg-surface shadow-md px-0 backdrop-blur-sm">
         <div className="flex items-center justify-between">
           {/* Logo and Desktop Navigation */}
           <div className="flex items-center gap-2 md:gap-4 px-2 sm:px-4 py-3 sm:py-4 flex-1">
@@ -39,13 +40,13 @@ function Header() {
             </Link>
 
             <div className="hidden sm:block h-6 mx-2 md:mx-4 w-px bg-slate-300" />
-            <nav className="hidden items-center gap-3 font-medium text-slate-600 sm:flex md:gap-6">
+            <nav className="hidden items-center gap-3 font-medium text-text-secondary sm:flex md:gap-6">
               {links.map((link) => (
                 <Link
                   key={link.title}
                   href={link.href}
                   aria-current={isActiveLink(link.href) ? "page" : undefined}
-                  className={`transition-colors hover:text-sky-700 ${isActiveLink(link.href) ? "text-sky-700 font-semibold" : ""}`}
+                  className={`transition-colors hover:text-brand-base ${isActiveLink(link.href) ? "text-brand-base font-semibold" : ""}`}
                 >
                   {link.title}
                 </Link>
@@ -70,7 +71,7 @@ function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="sm:hidden flex items-center justify-center p-2 text-slate-600 hover:bg-slate-100 rounded-md"
+            className="sm:hidden flex items-center justify-center p-2 text-text-secondary hover:bg-surface-muted rounded-md"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <IconX size={24} /> : <IconMenu2 size={24} />}
@@ -79,21 +80,21 @@ function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="sm:hidden bg-white border-t border-slate-200">
+          <div className="sm:hidden bg-surface border-t border-border-default">
             <nav className="flex flex-col">
               {links.map((link) => (
                 <Link
                   key={link.title}
                   href={link.href}
                   aria-current={isActiveLink(link.href) ? "page" : undefined}
-                  className={`border-b border-slate-100 px-4 py-3 text-sm transition-colors last:border-b-0 hover:bg-slate-50 hover:text-sky-700 ${isActiveLink(link.href) ? "bg-slate-50 font-semibold text-sky-700" : "text-slate-600"}`}
+                  className={`border-b border-border-subtle px-4 py-3 text-sm transition-colors last:border-b-0 hover:bg-surface-subtle hover:text-sky-700 ${isActiveLink(link.href) ? "bg-surface-subtle font-semibold text-sky-700" : "text-text-secondary"}`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.title}
                 </Link>
               ))}
             </nav>
-            <div className="flex w-full gap-2 border-t border-slate-100 px-3 py-3">
+            <div className="flex w-full gap-2 border-t border-border-subtle px-3 py-3">
               <Link href="/auth/login" onClick={() => setMobileMenuOpen(false)} className="flex-1">
                 <Button variant="outline" className="w-full">
                   Login

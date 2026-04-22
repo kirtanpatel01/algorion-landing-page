@@ -10,19 +10,19 @@ function CTA() {
       <div className="brand-gradient-radial rounded-2xl p-4 sm:p-8">
         <div className="grid grid-cols-1 items-center gap-6 text-center md:grid-cols-2 md:gap-12 md:text-left">
           <div>
-            <div className="inline-block rounded-full bg-white px-4 py-1.5 text-xs text-primary">
+            <div className="inline-block rounded-full bg-surface px-4 py-1.5 text-xs text-brand-darker">
               Trusted by AI traders
             </div>
-            <h2 className="mt-4 mb-3 text-2xl leading-tight text-white sm:text-3xl md:text-4xl">
+            <h2 className="mt-4 mb-3 text-2xl leading-tight text-surface sm:text-3xl md:text-4xl">
               Ready to Make Smarter Investments?
             </h2>
-            <p className="mt-3 mb-4 text-sm text-blue-100 sm:text-base md:text-lg">
+            <p className="mt-3 mb-4 text-sm text-brand-light sm:text-base md:text-lg">
               Join thousands of traders making data-driven decisions with
               AI-powered insights
             </p>
             <Button
               variant="primary"
-              className="w-full border-0 bg-white text-white hover:bg-blue-50 md:w-auto"
+              className="w-full border-0 bg-surface text-surface hover:bg-brand-surface md:w-auto"
             >
               Start Your Free Trial
               <IconArrowRight size={18} className="ml-2" />

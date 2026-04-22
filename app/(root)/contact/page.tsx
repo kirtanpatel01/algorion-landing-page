@@ -38,15 +38,15 @@ function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-surface">
       {/* Hero Section */}
       <Container className="px-3 sm:px-4 xl:px-0 py-12 sm:py-16 md:py-20">
         <div className="text-center mb-8 sm:mb-12">
           <SectionBadge label="We're Here To Help" icon={IconShieldCheck} />
-          <h1 className="text-3xl sm:text-4xl md:text-5xl  text-primary mb-3 sm:mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl  text-brand-darker mb-3 sm:mb-4">
             Get in Touch with Our Team
           </h1>
-          <p className="text-sm sm:text-base text-foreground-muted max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-text-muted max-w-xl mx-auto">
             Have a question, need support, or want to explore enterprise
             options? We respond within 24 hours.
           </p>
@@ -54,13 +54,13 @@ function ContactPage() {
 
         {/* Contact Form */}
         <div className="max-w-2xl mx-auto mb-12 sm:mb-16">
-          <form onSubmit={handleSubmit} className="bg-background">
+          <form onSubmit={handleSubmit} className="bg-surface">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
               {/* Full Name */}
               <div>
                 <label
                   htmlFor="fullName"
-                  className="block text-sm font-semibold text-foreground mb-2"
+                  className="block text-sm font-semibold text-text-primary mb-2"
                 >
                   Full Name
                 </label>
@@ -71,7 +71,7 @@ function ContactPage() {
                   value={formData.fullName}
                   onChange={handleChange}
                   placeholder="John Smith"
-                  className="w-full px-4 py-3 bg-slate-50 border border-border rounded-lg text-foreground placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 bg-surface-subtle border border-border-default rounded-lg text-text-primary placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-base focus:border-transparent transition-colors"
                   required
                 />
               </div>
@@ -80,7 +80,7 @@ function ContactPage() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-semibold text-slate-700 mb-2"
+                  className="block text-sm font-semibold text-text-secondary mb-2"
                 >
                   Email Address
                 </label>
@@ -91,7 +91,7 @@ function ContactPage() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="john@example.com"
-                  className="w-full px-4 py-3 bg-slate-50 border border-border rounded-lg text-foreground placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 bg-surface-subtle border border-border-default rounded-lg text-text-primary placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-base focus:border-transparent transition-colors"
                   required
                 />
               </div>
@@ -101,7 +101,7 @@ function ContactPage() {
             <div className="mb-4 sm:mb-6">
               <label
                 htmlFor="subject"
-                className="block text-sm font-semibold text-foreground mb-2"
+                className="block text-sm font-semibold text-text-primary mb-2"
               >
                 Subject
               </label>
@@ -110,7 +110,7 @@ function ContactPage() {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-slate-50 border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors appearance-none cursor-pointer"
+                className="w-full px-4 py-3 bg-surface-subtle border border-border-default rounded-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-brand-base focus:border-transparent transition-colors appearance-none cursor-pointer"
                 required
               >
                 <option value="">Select a subject...</option>
@@ -126,7 +126,7 @@ function ContactPage() {
             <div className="mb-6 sm:mb-8">
               <label
                 htmlFor="message"
-                className="block text-sm font-semibold text-foreground mb-2"
+                className="block text-sm font-semibold text-text-primary mb-2"
               >
                 Your Message
               </label>
@@ -137,7 +137,7 @@ function ContactPage() {
                 onChange={handleChange}
                 placeholder="Tell us how we can help you..."
                 rows={5}
-                className="w-full px-4 py-3 bg-slate-50 border border-border rounded-lg text-foreground placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
+                className="w-full px-4 py-3 bg-surface-subtle border border-border-default rounded-lg text-text-primary placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-base focus:border-transparent transition-colors resize-none"
                 required
               />
             </div>
@@ -161,24 +161,24 @@ function ContactPage() {
           {infoCards.map((card, index) => (
             <div
               key={index}
-              className="bg-slate-50 rounded-4xl p-6 sm:p-8 border border-border"
+              className="bg-surface-subtle rounded-4xl p-6 sm:p-8 border border-border-default"
             >
-              <h3 className="text-lg sm:text-xl text-foreground mb-2 sm:mb-3">
+              <h3 className="text-lg sm:text-xl text-text-primary mb-2 sm:mb-3">
                 {card.title}
               </h3>
-              <p className="text-sm sm:text-base text-foreground-muted mb-4">
+              <p className="text-sm sm:text-base text-text-muted mb-4">
                 {card.description}
               </p>
               {card.email && (
                 <a
                   href={`mailto:${card.email}`}
-                  className="text-sm  text-primary hover:text-blue-700 transition-colors"
+                  className="text-sm  text-brand-darker hover:text-brand-hover transition-colors"
                 >
                   {card.email}
                 </a>
               )}
               {card.note && (
-                <p className="text-xs sm:text-sm text-slate-500 mt-3">
+                <p className="text-xs sm:text-sm text-text-muted mt-3">
                   {card.note}
                 </p>
               )}

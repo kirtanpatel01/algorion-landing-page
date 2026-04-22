@@ -28,7 +28,7 @@ function Footer() {
   ];
 
   return (
-    <footer id="contact" className="border-t border-slate-200 bg-white">
+    <footer id="contact" className="border-t border-border-default bg-surface">
       <Container className="px-3 sm:px-4 xl:px-0 py-8 sm:py-10 md:py-14">
         {/* Logo and Social Icons */}
         <div className="mb-8 sm:mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 sm:gap-4">
@@ -42,12 +42,12 @@ function Footer() {
             />
           </div>
 
-          <ul className="flex items-center gap-3 sm:gap-2 text-slate-500 flex-wrap">
+          <ul className="flex items-center gap-3 sm:gap-2 text-text-muted flex-wrap">
             <li>
               <a
                 href="#"
                 aria-label="LinkedIn"
-                className="rounded-md p-1.5 sm:p-2 transition-colors hover:bg-slate-100 hover:text-slate-700"
+                className="rounded-md p-1.5 sm:p-2 transition-colors hover:bg-surface-muted hover:text-text-secondary"
               >
                 <IconBrandLinkedin size={20} className="sm:w-8 sm:h-8 w-5 h-5" />
               </a>
@@ -56,7 +56,7 @@ function Footer() {
               <a
                 href="#"
                 aria-label="Instagram"
-                className="rounded-md p-1.5 sm:p-2 transition-colors hover:bg-slate-100 hover:text-slate-700"
+                className="rounded-md p-1.5 sm:p-2 transition-colors hover:bg-surface-muted hover:text-text-secondary"
               >
                 <IconBrandInstagram size={20} className="sm:w-8 sm:h-8 w-5 h-5" />
               </a>
@@ -65,7 +65,7 @@ function Footer() {
               <a
                 href="#"
                 aria-label="Twitter"
-                className="rounded-md p-1.5 sm:p-2 transition-colors hover:bg-slate-100 hover:text-slate-700"
+                className="rounded-md p-1.5 sm:p-2 transition-colors hover:bg-surface-muted hover:text-text-secondary"
               >
                 <IconBrandTwitter size={20} className="sm:w-8 sm:h-8 w-5 h-5" />
               </a>
@@ -74,7 +74,7 @@ function Footer() {
               <a
                 href="#"
                 aria-label="YouTube"
-                className="rounded-md p-1.5 sm:p-2 transition-colors hover:bg-slate-100 hover:text-slate-700"
+                className="rounded-md p-1.5 sm:p-2 transition-colors hover:bg-surface-muted hover:text-text-secondary"
               >
                 <IconBrandYoutube size={20} className="sm:w-8 sm:h-8 w-5 h-5" />
               </a>
@@ -83,10 +83,10 @@ function Footer() {
         </div>
 
         {/* Links Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 border-b border-slate-200 pb-8 sm:pb-10 text-xs sm:text-sm text-slate-600">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 border-b border-border-default pb-8 sm:pb-10 text-xs sm:text-sm text-text-secondary">
           {links.map((group) => (
             <div key={group.heading}>
-              <h3 className="mb-3 sm:mb-4 text-sm sm:text-base font-semibold text-slate-800">
+              <h3 className="mb-3 sm:mb-4 text-sm sm:text-base font-semibold text-brand-darker">
                 {group.heading}
               </h3>
               <ul className="space-y-2 sm:space-y-2.5">
@@ -101,7 +101,7 @@ function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="flex flex-col gap-4 sm:gap-3 pt-6 sm:pt-8 text-xs sm:text-xs text-slate-500">
+        <div className="flex flex-col gap-4 sm:gap-3 pt-6 sm:pt-8 text-xs sm:text-xs text-text-muted">
           <p className="wrap-break-word">
             &copy; {new Date().getFullYear()} Algorion Research & Analysis Private Limited.
           </p>

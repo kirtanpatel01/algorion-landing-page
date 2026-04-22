@@ -7,16 +7,16 @@ import SectionBadge from "@/components/section-badge";
 
 function PricingPage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-surface">
       {/* Pricing Section */}
       <section className="py-16 md:py-24">
         <Container>
           <div className="text-center mb-16">
             <SectionBadge label="CHOOSE YOUR PLAN" icon={IconShieldCheck} />
-            <h1 className="text-4xl md:text-5xl font-normal text-primary mb-4">
+            <h1 className="text-4xl md:text-5xl font-normal text-brand-darker mb-4">
               Flexible Pricing for Every Trader
             </h1>
-            <p className="text-foreground-muted max-w-2xl mx-auto">
+            <p className="text-text-muted max-w-2xl mx-auto">
               Save more with longer commitments. All plans include full access
               to our platform.
             </p>
@@ -29,33 +29,33 @@ function PricingPage() {
                 key={index}
                 className={`relative rounded-xl p-6 transition-all border ${
                   plan.popular
-                    ? "bg-white border-blue-600 shadow-md sm:scale-105"
-                    : "bg-white border-gray-300 hover:shadow-sm"
+                    ? "bg-surface border-brand-base shadow-md sm:scale-105"
+                    : "bg-surface border-border-strong hover:shadow-sm"
                 }`}
               >
                 {/* Most Popular Tag */}
                 {plan.popular && (
-                  <div className="absolute -top-3 right-4 brand-gradient text-white text-[11px] px-3 py-1 rounded-md font-medium">
+                  <div className="absolute -top-3 right-4 brand-gradient text-surface text-[11px] px-3 py-1 rounded-md font-medium">
                     Most Popular
                   </div>
                 )}
 
                 {/* Plan Name */}
                 <div className="mb-3">
-                  <h3 className="text-[15px] font-medium text-primary">
+                  <h3 className="text-[15px] font-medium text-brand-darker">
                     {plan.name}
                   </h3>
-                  <p className="text-xs text-gray-500">{plan.period}</p>
+                  <p className="text-xs text-text-muted">{plan.period}</p>
                 </div>
 
                 {/* Price Section */}
                 <div className="mb-5">
-                  <h2 className="text-2xl font-semibold text-primary">
+                  <h2 className="text-2xl font-semibold text-brand-darker">
                     {plan.price}
                   </h2>
 
                   {/* Monthly breakdown (missing in your UI) */}
-                  <p className="text-[11px] text-foreground-muted mt-1">
+                  <p className="text-[11px] text-text-muted mt-1">
                     ₹
                     {Math.round(
                       parseInt(plan.price.replace(/[^\d]/g, "")) /
@@ -76,16 +76,16 @@ function PricingPage() {
                 <button
                   className={`w-full py-2 rounded-md text-sm font-medium mb-6 transition ${
                     plan.popular
-                      ? "brand-gradient text-white hover:bg-blue-700"
-                      : "border border-border text-primary hover:bg-gray-100"
+                      ? "brand-gradient text-surface hover:bg-brand-hover"
+                      : "border border-border-default text-brand-darker hover:bg-surface-muted"
                   }`}
                 >
                   {plan.buttonText}
                 </button>
 
                 {/* Features */}
-                <div className="border-t border-gray-200 pt-4">
-                  <p className="text-sm font-medium text-primary mb-3">
+                <div className="border-t border-border-default pt-4">
+                  <p className="text-sm font-medium text-brand-darker mb-3">
                     What do you get:
                   </p>
 
@@ -94,9 +94,9 @@ function PricingPage() {
                       <li key={idx} className="flex items-start gap-2">
                         <IconCheck
                           size={16}
-                          className="text-green-500 mt-0.5"
+                          className="text-success mt-0.5"
                         />
-                        <span className="text-xs text-foreground-muted leading-relaxed">
+                        <span className="text-xs text-text-muted leading-relaxed">
                           {feature}
                         </span>
                       </li>

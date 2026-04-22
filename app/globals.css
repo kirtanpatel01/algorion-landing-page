@@ -1,24 +1,36 @@
 @import "tailwindcss";
 
-:root {
-  --background: #fff;
-  --foreground: #141414;
-  --foreground-muted: #8C8C8C;
-  --border: #D1D1D1;
-  --primary: #163257;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-foreground-muted: var(--foreground-muted);
-  --color-border: var(--border);
-  --color-primary: var(--primary);
+  --color-surface: var(--color-white);
+  --color-surface-subtle: var(--color-slate-50);
+  --color-surface-muted: var(--color-slate-100);
+  --color-surface-dark: var(--color-slate-800);
+  --color-surface-darker: var(--color-slate-900);
+
+  --color-text-primary: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-700);
+  --color-text-muted: var(--color-slate-500);
+
+  --color-border-subtle: var(--color-slate-100);
+  --color-border-default: var(--color-slate-200);
+  --color-border-strong: var(--color-slate-300);
+
+  --color-brand-surface: var(--color-blue-50);
+  --color-brand-light: var(--color-blue-100);
+  --color-brand-muted: var(--color-blue-200);
+  --color-brand-base: var(--color-blue-700);
+  --color-brand-hover: var(--color-blue-800);
+  --color-brand-dark: var(--color-blue-900);
+  --color-brand-darker: var(--color-blue-950);
+
+  --color-success: var(--color-emerald-500);
+  --color-warning: var(--color-amber-400);
+  --color-danger: var(--color-rose-500);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
 }
 
 html {
@@ -26,17 +38,13 @@ html {
 }
 
 .bg-gradient {
-  @apply bg-linear-to-br from-[#E5F0FF] via-white to-[#bad7fed0] ;
-}
-
-.blue-gradient {
-  @apply bg-gradient-to-r from-[#163257] to-[#306dbd];
+  @apply bg-linear-to-br from-brand-surface via-white to-brand-muted;
 }
 
 .brand-gradient {
-  background: linear-gradient(90deg, #163257 0%, #306dbd 100%);
+  @apply bg-linear-to-r from-brand-darker to-brand-base;
 }
 
 .brand-gradient-radial {
-  @apply bg-radial-[at_50%_75%] to-[#163257] from-[#306dbd];
+  @apply bg-radial-[at_50%_75%] to-brand-darker from-brand-base;
 }
